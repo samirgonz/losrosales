@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Los Rosales Maintenance & Landscape LLC | Miami &amp; Cape Coral, FL</title>
+<meta name="description" content="Cleaning, landscaping, painting, pressure washing, and general property maintenance in Miami and Cape Coral, FL. Bilingual, owner-operated, reliable.">
+<style>
+  :root{
+    --green:#4F7A33;
+    --green-dark:#3A5A26;
+    --gold:#B8952E;
+    --gold-light:#D8BE6B;
+    --tint:#EDF3EA;
+    --cream:#FBF3DC;
+    --charcoal:#2B2B2B;
+    --white:#FFFFFF;
+    --radius:10px;
+    --shadow:0 4px 18px rgba(43,43,43,0.08);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--charcoal);
+    background:var(--white);
+    line-height:1.55;
+  }
+  h1,h2,h3,h4{
+    font-family:Georgia,'Times New Roman',serif;
+    color:var(--green-dark);
+    margin:0 0 .5em 0;
+    line-height:1.2;
+  }
+  p{margin:0 0 1em 0;}
+  a{color:var(--green-dark);}
+  img{max-width:100%;display:block;}
+  .container{max-width:1120px;margin:0 auto;padding:0 24px;}
+  section{padding:72px 0;}
+  .section-tint{background:var(--tint);}
+  .section-cream{background:var(--cream);}
+  .eyebrow{
+    text-transform:uppercase;
+    letter-spacing:.12em;
+    font-size:.78rem;
+    font-weight:700;
+    color:var(--gold);
+    margin-bottom:.5em;
+    display:block;
+  }
+  .lead{font-size:1.15rem;color:#4a4a4a;max-width:680px;}
+  .btn{
+    display:inline-block;
+    padding:14px 30px;
+    border-radius:999px;
+    font-weight:700;
+    text-decoration:none;
+    font-size:1rem;
+    cursor:pointer;
+    border:2px solid transparent;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:hover{transform:translateY(-1px);}
+  .btn-primary{background:var(--gold);color:var(--white);}
+  .btn-primary:hover{background:var(--gold-light);}
+  .btn-outline{background:transparent;color:var(--white);border-color:var(--white);}
+  .btn-outline:hover{background:rgba(255,255,255,.12);}
+  .btn-green{background:var(--green);color:var(--white);}
+  .btn-green:hover{background:var(--green-dark);}
+
+  /* Header */
+  header{
+    position:sticky;top:0;z-index:100;
+    background:var(--white);
+    border-bottom:1px solid #ece7d6;
+  }
+  .topbar{
+    background:var(--green-dark);
+    color:var(--white);
+    font-size:.85rem;
+  }
+  .topbar .container{
+    display:flex;justify-content:space-between;align-items:center;
+    padding-top:8px;padding-bottom:8px;
+    flex-wrap:wrap;gap:8px;
+  }
+  .topbar a{color:var(--white);text-decoration:none;}
+  .topbar .phone{font-weight:700;}
+  .lang-toggle{
+    background:rgba(255,255,255,.15);
+    border:1px solid rgba(255,255,255,.4);
+    color:var(--white);
+    border-radius:999px;
+    padding:4px 12px;
+    font-size:.8rem;
+    font-weight:700;
+    cursor:pointer;
+  }
+  .navwrap{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 0;
+  }
+  .brand{display:flex;flex-direction:column;line-height:1.1;text-decoration:none;}
+  .brand .name{font-family:Georgia,serif;font-weight:700;font-size:1.5rem;color:var(--green-dark);}
+  .brand .tagline{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);font-weight:700;}
+  nav ul{
+    list-style:none;display:flex;gap:26px;margin:0;padding:0;
+  }
+  nav a{
+    text-decoration:none;color:var(--charcoal);font-weight:600;font-size:.95rem;
+  }
+  nav a:hover{color:var(--green);}
+  .nav-toggle{display:none;background:none;border:none;font-size:1.6rem;cursor:pointer;color:var(--green-dark);}
+
+  /* Hero */
+  .hero{
+    background:linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
+    color:var(--white);
+    padding:90px 0;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero:before{
+    content:"";
+    position:absolute;right:-80px;top:-80px;width:360px;height:360px;
+    background:rgba(184,149,46,.18);
+    border-radius:50%;
+  }
+  .hero .container{position:relative;z-index:1;max-width:760px;}
+  .hero h1{color:var(--white);font-size:2.5rem;margin-bottom:.4em;}
+  .hero .lead{color:#eef4ea;font-size:1.2rem;}
+  .hero .intro{color:#e4ecdf;max-width:620px;}
+  .hero .cta-row{display:flex;gap:16px;flex-wrap:wrap;margin-top:28px;}
+  .trustline{
+    margin-top:34px;padding-top:20px;border-top:1px solid rgba(255,255,255,.25);
+    font-size:.92rem;color:#e4ecdf;
+  }
+
+  /* Services */
+  .services-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;margin-top:36px;
+  }
+  .service-card{
+    background:var(--white);border:1px solid #ece7d6;border-radius:var(--radius);
+    padding:28px 24px;box-shadow:var(--shadow);
+  }
+  .service-card .icon{
+    width:52px;height:52px;border-radius:12px;background:var(--tint);
+    display:flex;align-items:center;justify-content:center;margin-bottom:16px;color:var(--green);
+  }
+  .service-card h3{font-size:1.15rem;margin-bottom:.4em;}
+  .service-card p{color:#555;font-size:.95rem;margin-bottom:0;}
+
+  /* Service areas */
+  .areas-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-top:32px;}
+  .area-card{
+    background:var(--white);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);
+    display:flex;gap:16px;align-items:flex-start;
+  }
+  .area-card .icon{color:var(--gold);flex:0 0 auto;}
+  .area-card h3{margin-bottom:.25em;}
+  .area-card p{color:#555;margin-bottom:0;font-size:.95rem;}
+
+  /* About */
+  .about-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;}
+  .about-facts{display:flex;flex-direction:column;gap:16px;}
+  .fact{
+    background:var(--white);border-left:4px solid var(--gold);border-radius:6px;
+    padding:16px 20px;box-shadow:var(--shadow);
+  }
+  .fact strong{display:block;color:var(--green-dark);font-size:1.02rem;}
+  .fact span{color:#555;font-size:.9rem;}
+
+  /* Gallery */
+  .gallery-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px;margin-top:32px;
+  }
+  .gallery-tile{
+    aspect-ratio:4/3;border-radius:var(--radius);
+    border:2px dashed #cbd3c5;background:var(--tint);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    color:var(--green-dark);text-align:center;padding:12px;gap:8px;
+  }
+  .gallery-tile span{font-size:.82rem;font-weight:600;color:#5c6b58;}
+
+  /* Reviews */
+  .review-cta{
+    background:var(--cream);border-radius:var(--radius);padding:28px 32px;
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px;
+    margin:32px 0 40px 0;
+  }
+  .review-cta p{margin:0;color:#555;max-width:520px;}
+  .stars{color:var(--gold);font-size:1.1rem;letter-spacing:2px;}
+  .reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;}
+  .review-card{
+    background:var(--white);border:1px solid #ece7d6;border-radius:var(--radius);
+    padding:24px;box-shadow:var(--shadow);
+  }
+  .review-card .quote{font-style:italic;color:#3d3d3d;margin-bottom:14px;}
+  .review-card .who{font-weight:700;color:var(--green-dark);font-size:.92rem;}
+  .review-card .meta{font-size:.82rem;color:#888;}
+  .placeholder-tag{
+    display:inline-block;background:#fdeccb;color:#8a5f00;font-size:.7rem;font-weight:700;
+    padding:2px 8px;border-radius:999px;margin-bottom:10px;text-transform:uppercase;letter-spacing:.06em;
+  }
+
+  /* Contact */
+  .contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;}
+  .contact-info-card{
+    background:var(--green-dark);color:var(--white);border-radius:var(--radius);
+    padding:32px;height:fit-content;
+  }
+  .contact-info-card h3{color:var(--white);}
+  .contact-info-card a{color:var(--cream);}
+  .contact-line{display:flex;gap:12px;align-items:flex-start;margin-bottom:18px;}
+  .contact-line .icon{color:var(--gold-light);flex:0 0 auto;}
+  form{display:flex;flex-direction:column;gap:14px;}
+  .field label{display:block;font-size:.85rem;font-weight:700;margin-bottom:6px;color:var(--green-dark);}
+  .field input, .field select, .field textarea{
+    width:100%;padding:12px 14px;border:1px solid #d8d3c0;border-radius:8px;
+    font-size:.95rem;font-family:inherit;background:var(--white);color:var(--charcoal);
+  }
+  .field textarea{min-height:110px;resize:vertical;}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .form-note{font-size:.82rem;color:#777;margin-top:-4px;}
+
+  footer{background:var(--charcoal);color:#cfcfcf;padding:48px 0 24px;}
+  .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:32px;margin-bottom:32px;}
+  footer h4{color:var(--white);font-family:inherit;font-size:.95rem;margin-bottom:14px;}
+  footer a{color:#cfcfcf;text-decoration:none;font-size:.92rem;}
+  footer a:hover{color:var(--gold-light);}
+  .footer-links{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;}
+  .footer-bottom{border-top:1px solid #444;padding-top:18px;font-size:.82rem;color:#999;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+  .social-icons{display:flex;gap:12px;margin-top:6px;}
+  .social-icons a{
+    width:36px;height:36px;border-radius:50%;background:#3a3a3a;
+    display:flex;align-items:center;justify-content:center;color:var(--white);
+  }
+
+  @media (max-width:860px){
+    .about-wrap, .contact-wrap{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:720px){
+    nav{
+      position:fixed;top:0;right:0;height:100vh;width:78%;max-width:320px;
+      background:var(--white);box-shadow:-6px 0 24px rgba(0,0,0,.15);
+      transform:translateX(100%);transition:transform .25s ease;
+      padding:90px 28px 28px;z-index:120;
+    }
+    nav.open{transform:translateX(0);}
+    nav ul{flex-direction:column;gap:22px;}
+    .nav-toggle{display:block;}
+    .hero h1{font-size:1.9rem;}
+    section{padding:52px 0;}
+    .row2{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="topbar">
+    <div class="container">
+      <div>
+        <span data-i18n="topbar.tagline">Miami &amp; Cape Coral, FL — Bilingual &amp; Owner-Operated</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:16px;">
+        <a class="phone" href="tel:+17867284868">📞 786-728-4868</a>
+        <button class="lang-toggle" id="langToggle" type="button">Español</button>
+      </div>
+    </div>
+  </div>
+  <div class="container navwrap">
+    <a href="#home" class="brand">
+      <span class="name">Los Rosales</span>
+      <span class="tagline">Maintenance &amp; Landscape LLC</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
+    <nav id="siteNav">
+      <ul>
+        <li><a href="#home" data-i18n="nav.home">Home</a></li>
+        <li><a href="#services" data-i18n="nav.services">Services</a></li>
+        <li><a href="#areas" data-i18n="nav.areas">Service Areas</a></li>
+        <li><a href="#about" data-i18n="nav.about">About</a></li>
+        <li><a href="#gallery" data-i18n="nav.gallery">Gallery</a></li>
+        <li><a href="#reviews" data-i18n="nav.reviews">Reviews</a></li>
+        <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="container">
+    <span class="eyebrow" data-i18n="hero.eyebrow">Serving Miami &amp; Cape Coral</span>
+    <h1 data-i18n="hero.headline">Miami &amp; Cape Coral's Local Property Maintenance Team — Reachable, Reliable, Ready</h1>
+    <p class="lead" data-i18n="hero.subheadline">Cleaning, landscaping, painting, pressure washing, and general maintenance for homes, businesses, and communities.</p>
+    <p class="intro" data-i18n="hero.intro">Los Rosales Maintenance &amp; Landscape LLC is a family-owned, bilingual maintenance company proudly serving Miami and Cape Coral. When you call, you reach us directly — not a call center. Whether you manage a single home or an entire community, we show up, do the job right, and stay reachable if you ever need us again.</p>
+    <div class="cta-row">
+      <a href="#contact" class="btn btn-primary" data-i18n="hero.cta">Request a Free Quote →</a>
+      <a href="tel:+17867284868" class="btn btn-outline" data-i18n="hero.call">Call 786-728-4868</a>
+    </div>
+    <p class="trustline" data-i18n="hero.trust">Trusted by homeowners, businesses, and HOA communities across South Florida.</p>
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <span class="eyebrow" data-i18n="services.eyebrow">What We Do</span>
+    <h2 data-i18n="services.heading">Services</h2>
+    <p class="lead" data-i18n="services.intro">Five core services, delivered reliably across Miami and Cape Coral.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l6-6"/><path d="M14.5 6.5c1.5-1.5 4-1.5 5.5 0l-9.5 9.5-2-2z"/><path d="M9 12l-6 6"/><path d="M12 9l3 3"/></svg>
+        </div>
+        <h3 data-i18n="services.cleaning.title">Cleaning</h3>
+        <p data-i18n="services.cleaning.desc">Residential and commercial cleaning that keeps your property spotless and welcoming, on a schedule that works for you.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <h3 data-i18n="services.maintenance.title">General Maintenance</h3>
+        <p data-i18n="services.maintenance.desc">General property upkeep and repairs — the ongoing work that keeps a property running smoothly and looking its best.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-4.5 7-11a7 7 0 0 0-14 0c0 6.5 7 11 7 11z"/><path d="M12 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+        </div>
+        <h3 data-i18n="services.landscaping.title">Landscaping &amp; Lawn Care</h3>
+        <p data-i18n="services.landscaping.desc">Lawn care, trimming, and landscaping upkeep to keep your grounds healthy and well-maintained year-round.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2l4 4-11 11-5 1 1-5z"/><path d="M2 22l4-1"/></svg>
+        </div>
+        <h3 data-i18n="services.painting.title">Painting</h3>
+        <p data-i18n="services.painting.desc">Interior and exterior painting that refreshes and protects your property, done cleanly and on schedule.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></svg>
+        </div>
+        <h3 data-i18n="services.pressure.title">Pressure Washing</h3>
+        <p data-i18n="services.pressure.desc">Pressure washing for driveways, sidewalks, siding, and roofs — restoring surfaces and boosting curb appeal.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="areas" class="section-tint">
+  <div class="container">
+    <span class="eyebrow" data-i18n="areas.eyebrow">Where We Work</span>
+    <h2 data-i18n="areas.heading">Proudly Serving Miami and Cape Coral</h2>
+    <p class="lead" data-i18n="areas.body">Los Rosales operates two branches so we can respond quickly across South Florida — one based in Miami, one in Cape Coral. If you're not sure whether we cover your area, just call — we're happy to check.</p>
+    <div class="areas-grid">
+      <div class="area-card">
+        <div class="icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div>
+          <h3 data-i18n="areas.miami.title">Miami, FL</h3>
+          <p data-i18n="areas.miami.body">Full-service branch covering Miami-Dade communities, homes, and commercial properties.</p>
+        </div>
+      </div>
+      <div class="area-card">
+        <div class="icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div>
+          <h3 data-i18n="areas.cape.title">Cape Coral, FL</h3>
+          <p data-i18n="areas.cape.body">Second branch serving Cape Coral homeowners, businesses, and HOA communities.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container about-wrap">
+    <div>
+      <span class="eyebrow" data-i18n="about.eyebrow">Why Los Rosales</span>
+      <h2 data-i18n="about.heading">Why Property Managers and Homeowners Choose Los Rosales</h2>
+      <p class="lead" data-i18n="about.body">Los Rosales is owner-operated by Yordani Hernandez Rosales, who's personally involved in every job — not a distant account manager juggling hundreds of properties. That means faster responses, direct accountability, and a team that actually knows your property. We serve both Miami and Cape Coral in English and Spanish, and we back every job with our word.</p>
+    </div>
+    <div class="about-facts">
+      <div class="fact">
+        <strong data-i18n="about.fact1.title">Owner-Operated</strong>
+        <span data-i18n="about.fact1.body">You reach the owner directly — not a call center.</span>
+      </div>
+      <div class="fact">
+        <strong data-i18n="about.fact2.title">Bilingual Service</strong>
+        <span data-i18n="about.fact2.body">Fluent support in English and Spanish, every step.</span>
+      </div>
+      <div class="fact">
+        <strong data-i18n="about.fact3.title">Two Branches</strong>
+        <span data-i18n="about.fact3.body">Local crews in both Miami and Cape Coral.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" class="section-tint">
+  <div class="container">
+    <span class="eyebrow" data-i18n="gallery.eyebrow">Our Work</span>
+    <h2 data-i18n="gallery.heading">Gallery</h2>
+    <p class="lead" data-i18n="gallery.caption">See the difference for yourself — real before-and-after photos from recent jobs across Miami and Cape Coral.</p>
+    <div class="gallery-grid" id="galleryGrid"></div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="container">
+    <span class="eyebrow" data-i18n="reviews.eyebrow">Client Feedback</span>
+    <h2 data-i18n="reviews.heading">What Our Clients Are Saying</h2>
+    <p class="lead" data-i18n="reviews.intro">Real feedback from homeowners, businesses, and communities we've worked with in Miami and Cape Coral.</p>
+
+    <div class="review-cta">
+      <div>
+        <div class="stars">★★★★★</div>
+        <p data-i18n="reviews.ctaSubtext">Worked with us recently? A quick review helps other homeowners and property managers find us.</p>
+      </div>
+      <a href="#" class="btn btn-green" data-i18n="reviews.cta" id="googleReviewLink">Rate Us on Google →</a>
+    </div>
+
+    <div class="reviews-grid">
+      <div class="review-card">
+        <span class="placeholder-tag" data-i18n="reviews.placeholder">Placeholder — replace with a real review</span>
+        <div class="stars">★★★★★</div>
+        <p class="quote">&ldquo;Llegaron a tiempo, dejaron el jardín impecable y el precio fue justo. Totalmente recomendados.&rdquo;</p>
+        <div class="who">María G.</div>
+        <div class="meta">Jardinería · Miami</div>
+      </div>
+      <div class="review-card">
+        <span class="placeholder-tag" data-i18n="reviews.placeholder">Placeholder — replace with a real review</span>
+        <div class="stars">★★★★★</div>
+        <p class="quote">&ldquo;Great communication and the pressure washing made our driveway look brand new. Will hire again.&rdquo;</p>
+        <div class="who">David R.</div>
+        <div class="meta">Pressure Washing · Cape Coral</div>
+      </div>
+      <div class="review-card">
+        <span class="placeholder-tag" data-i18n="reviews.placeholder">Placeholder — replace with a real review</span>
+        <div class="stars">★★★★★</div>
+        <p class="quote" data-i18n="reviews.card3.quote">&ldquo;[Placeholder — replace with a real quote once a community/commercial reference agrees to be featured.]&rdquo;</p>
+        <div class="who" data-i18n="reviews.card3.who">[HOA Board / Community Name]</div>
+        <div class="meta" data-i18n="reviews.card3.meta">General Maintenance · Miami</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section-cream">
+  <div class="container">
+    <span class="eyebrow" data-i18n="contact.eyebrow">Get In Touch</span>
+    <h2 data-i18n="contact.heading">Get a Free Quote</h2>
+    <p class="lead" data-i18n="contact.body">Tell us a little about your property and what you need — we'll get back to you quickly with a straightforward quote. No pressure, no call center.</p>
+
+    <div class="contact-wrap" style="margin-top:32px;">
+      <div class="contact-info-card">
+        <h3 data-i18n="contact.infoTitle">Contact Information</h3>
+        <div class="contact-line">
+          <span class="icon">📞</span>
+          <div><a href="tel:+17867284868">786-728-4868</a></div>
+        </div>
+        <div class="contact-line">
+          <span class="icon">✉️</span>
+          <div><a href="mailto:info@losrosalesservices.com">info@losrosalesservices.com</a></div>
+        </div>
+        <div class="contact-line">
+          <span class="icon">🌐</span>
+          <div><a href="https://losrosalesservices.com" style="color:var(--cream);">losrosalesservices.com</a></div>
+        </div>
+        <div class="contact-line">
+          <span class="icon">📍</span>
+          <div data-i18n="contact.areasServed">Serving Miami &amp; Cape Coral, FL</div>
+        </div>
+        <p style="margin-top:24px;font-size:.9rem;color:#dfe8da;" data-i18n="contact.note">Owner-operated and bilingual — you'll always reach someone who can help, in English or Español.</p>
+      </div>
+
+      <form id="quoteForm">
+        <div class="row2">
+          <div class="field">
+            <label data-i18n="contact.form.name">Name</label>
+            <input type="text" name="name" required>
+          </div>
+          <div class="field">
+            <label data-i18n="contact.form.phone">Phone</label>
+            <input type="tel" name="phone" required>
+          </div>
+        </div>
+        <div class="field">
+          <label data-i18n="contact.form.email">Email</label>
+          <input type="email" name="email" required>
+        </div>
+        <div class="row2">
+          <div class="field">
+            <label data-i18n="contact.form.propertyType">Property Type</label>
+            <select name="propertyType">
+              <option data-i18n="contact.form.opt.residential">Residential</option>
+              <option data-i18n="contact.form.opt.commercial">Commercial</option>
+              <option data-i18n="contact.form.opt.hoa">HOA / Community</option>
+            </select>
+          </div>
+          <div class="field">
+            <label data-i18n="contact.form.serviceNeeded">Service Needed</label>
+            <select name="service">
+              <option data-i18n="services.cleaning.title">Cleaning</option>
+              <option data-i18n="services.maintenance.title">General Maintenance</option>
+              <option data-i18n="services.landscaping.title">Landscaping &amp; Lawn Care</option>
+              <option data-i18n="services.painting.title">Painting</option>
+              <option data-i18n="services.pressure.title">Pressure Washing</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label data-i18n="contact.form.message">Message</label>
+          <textarea name="message"></textarea>
+        </div>
+        <p class="form-note" data-i18n="contact.form.note">This form opens your email app with the details pre-filled — replace with a connected form service (e.g., Formspree) once the site is hosted.</p>
+        <button type="submit" class="btn btn-primary" data-i18n="contact.form.submit">Send Request →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Los Rosales Maintenance &amp; Landscape LLC</h4>
+        <p data-i18n="footer.blurb" style="font-size:.9rem;">Bilingual, owner-operated maintenance, cleaning, landscaping, painting, and pressure washing across Miami and Cape Coral, FL.</p>
+        <div class="social-icons">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Instagram">ig</a>
+        </div>
+      </div>
+      <div>
+        <h4 data-i18n="footer.linksTitle">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#services" data-i18n="nav.services">Services</a></li>
+          <li><a href="#areas" data-i18n="nav.areas">Service Areas</a></li>
+          <li><a href="#reviews" data-i18n="nav.reviews">Reviews</a></li>
+          <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="footer.contactTitle">Contact</h4>
+        <ul class="footer-links">
+          <li><a href="tel:+17867284868">786-728-4868</a></li>
+          <li><a href="mailto:info@losrosalesservices.com">info@losrosalesservices.com</a></li>
+          <li><a href="https://losrosalesservices.com">losrosalesservices.com</a></li>
+          <li><span data-i18n="contact.areasServed">Serving Miami &amp; Cape Coral, FL</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Los Rosales Maintenance &amp; Landscape LLC. <span data-i18n="footer.rights">All rights reserved.</span></span>
+      <span data-i18n="footer.credit">Website v1 — replace gallery photos and reviews as they're collected.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const translations = {
+  en: {
+    "topbar.tagline":"Miami & Cape Coral, FL — Bilingual & Owner-Operated",
+    "nav.home":"Home","nav.services":"Services","nav.areas":"Service Areas","nav.about":"About",
+    "nav.gallery":"Gallery","nav.reviews":"Reviews","nav.contact":"Contact",
+    "hero.eyebrow":"Serving Miami & Cape Coral",
+    "hero.headline":"Miami & Cape Coral's Local Property Maintenance Team — Reachable, Reliable, Ready",
+    "hero.subheadline":"Cleaning, landscaping, painting, pressure washing, and general maintenance for homes, businesses, and communities.",
+    "hero.intro":"Los Rosales Maintenance & Landscape LLC is a family-owned, bilingual maintenance company proudly serving Miami and Cape Coral. When you call, you reach us directly — not a call center. Whether you manage a single home or an entire community, we show up, do the job right, and stay reachable if you ever need us again.",
+    "hero.cta":"Request a Free Quote →",
+    "hero.call":"Call 786-728-4868",
+    "hero.trust":"Trusted by homeowners, businesses, and HOA communities across South Florida.",
+    "services.eyebrow":"What We Do","services.heading":"Services",
+    "services.intro":"Five core services, delivered reliably across Miami and Cape Coral.",
+    "services.cleaning.title":"Cleaning",
+    "services.cleaning.desc":"Residential and commercial cleaning that keeps your property spotless and welcoming, on a schedule that works for you.",
+    "services.maintenance.title":"General Maintenance",
+    "services.maintenance.desc":"General property upkeep and repairs — the ongoing work that keeps a property running smoothly and looking its best.",
+    "services.landscaping.title":"Landscaping & Lawn Care",
+    "services.landscaping.desc":"Lawn care, trimming, and landscaping upkeep to keep your grounds healthy and well-maintained year-round.",
+    "services.painting.title":"Painting",
+    "services.painting.desc":"Interior and exterior painting that refreshes and protects your property, done cleanly and on schedule.",
+    "services.pressure.title":"Pressure Washing",
+    "services.pressure.desc":"Pressure washing for driveways, sidewalks, siding, and roofs — restoring surfaces and boosting curb appeal.",
+    "areas.eyebrow":"Where We Work","areas.heading":"Proudly Serving Miami and Cape Coral",
+    "areas.body":"Los Rosales operates two branches so we can respond quickly across South Florida — one based in Miami, one in Cape Coral. If you're not sure whether we cover your area, just call — we're happy to check.",
+    "areas.miami.title":"Miami, FL",
+    "areas.miami.body":"Full-service branch covering Miami-Dade communities, homes, and commercial properties.",
+    "areas.cape.title":"Cape Coral, FL",
+    "areas.cape.body":"Second branch serving Cape Coral homeowners, businesses, and HOA communities.",
+    "about.eyebrow":"Why Los Rosales",
+    "about.heading":"Why Property Managers and Homeowners Choose Los Rosales",
+    "about.body":"Los Rosales is owner-operated by Yordani Hernandez Rosales, who's personally involved in every job — not a distant account manager juggling hundreds of properties. That means faster responses, direct accountability, and a team that actually knows your property. We serve both Miami and Cape Coral in English and Spanish, and we back every job with our word.",
+    "about.fact1.title":"Owner-Operated","about.fact1.body":"You reach the owner directly — not a call center.",
+    "about.fact2.title":"Bilingual Service","about.fact2.body":"Fluent support in English and Spanish, every step.",
+    "about.fact3.title":"Two Branches","about.fact3.body":"Local crews in both Miami and Cape Coral.",
+    "gallery.eyebrow":"Our Work","gallery.heading":"Gallery",
+    "gallery.caption":"See the difference for yourself — real before-and-after photos from recent jobs across Miami and Cape Coral.",
+    "reviews.eyebrow":"Client Feedback","reviews.heading":"What Our Clients Are Saying",
+    "reviews.intro":"Real feedback from homeowners, businesses, and communities we've worked with in Miami and Cape Coral.",
+    "reviews.ctaSubtext":"Worked with us recently? A quick review helps other homeowners and property managers find us.",
+    "reviews.cta":"Rate Us on Google →",
+    "reviews.placeholder":"Placeholder — replace with a real review",
+    "reviews.card3.quote":"“[Placeholder — replace with a real quote once a community/commercial reference agrees to be featured.]”",
+    "reviews.card3.who":"[HOA Board / Community Name]",
+    "reviews.card3.meta":"General Maintenance · Miami",
+    "contact.eyebrow":"Get In Touch","contact.heading":"Get a Free Quote",
+    "contact.body":"Tell us a little about your property and what you need — we'll get back to you quickly with a straightforward quote. No pressure, no call center.",
+    "contact.infoTitle":"Contact Information",
+    "contact.areasServed":"Serving Miami & Cape Coral, FL",
+    "contact.note":"Owner-operated and bilingual — you'll always reach someone who can help, in English or Español.",
+    "contact.form.name":"Name","contact.form.phone":"Phone","contact.form.email":"Email",
+    "contact.form.propertyType":"Property Type","contact.form.serviceNeeded":"Service Needed","contact.form.message":"Message",
+    "contact.form.opt.residential":"Residential","contact.form.opt.commercial":"Commercial","contact.form.opt.hoa":"HOA / Community",
+    "contact.form.note":"This form opens your email app with the details pre-filled — replace with a connected form service (e.g., Formspree) once the site is hosted.",
+    "contact.form.submit":"Send Request →",
+    "footer.blurb":"Bilingual, owner-operated maintenance, cleaning, landscaping, painting, and pressure washing across Miami and Cape Coral, FL.",
+    "footer.linksTitle":"Quick Links","footer.contactTitle":"Contact",
+    "footer.rights":"All rights reserved.",
+    "footer.credit":"Website v1 — replace gallery photos and reviews as they're collected.",
+    "gallery.photoSoon":"Photo coming soon"
+  },
+  es: {
+    "topbar.tagline":"Miami y Cape Coral, FL — Bilingüe y Operado por su Propietario",
+    "nav.home":"Inicio","nav.services":"Servicios","nav.areas":"Áreas de Servicio","nav.about":"Nosotros",
+    "nav.gallery":"Galería","nav.reviews":"Reseñas","nav.contact":"Contacto",
+    "hero.eyebrow":"Sirviendo a Miami y Cape Coral",
+    "hero.headline":"El Equipo Local de Mantenimiento de Propiedades en Miami y Cape Coral — Accesibles, Confiables, Listos",
+    "hero.subheadline":"Limpieza, jardinería, pintura, lavado a presión y mantenimiento general para hogares, negocios y comunidades.",
+    "hero.intro":"Los Rosales Maintenance & Landscape LLC es una empresa familiar y bilingüe que sirve con orgullo a Miami y Cape Coral. Cuando usted llama, nos contacta directamente a nosotros — no a un centro de llamadas. Ya sea que administre una sola vivienda o toda una comunidad, llegamos, hacemos el trabajo bien, y seguimos disponibles si nos necesita de nuevo.",
+    "hero.cta":"Solicite una Cotización Gratis →",
+    "hero.call":"Llame al 786-728-4868",
+    "hero.trust":"La confianza de propietarios, negocios y comunidades HOA en todo el sur de la Florida.",
+    "services.eyebrow":"Lo Que Hacemos","services.heading":"Servicios",
+    "services.intro":"Cinco servicios principales, ofrecidos de forma confiable en Miami y Cape Coral.",
+    "services.cleaning.title":"Limpieza",
+    "services.cleaning.desc":"Limpieza residencial y comercial que mantiene su propiedad impecable y acogedora, en el horario que le convenga.",
+    "services.maintenance.title":"Mantenimiento General",
+    "services.maintenance.desc":"Mantenimiento general y reparaciones — el trabajo constante que mantiene su propiedad funcionando bien y luciendo su mejor versión.",
+    "services.landscaping.title":"Jardinería y Cuidado de Césped",
+    "services.landscaping.desc":"Cuidado de césped, poda y mantenimiento de jardines para mantener sus áreas verdes saludables durante todo el año.",
+    "services.painting.title":"Pintura",
+    "services.painting.desc":"Pintura interior y exterior que renueva y protege su propiedad, realizada con limpieza y puntualidad.",
+    "services.pressure.title":"Lavado a Presión",
+    "services.pressure.desc":"Lavado a presión para entradas, aceras, fachadas y techos — restaurando superficies y mejorando la apariencia de su propiedad.",
+    "areas.eyebrow":"Dónde Trabajamos","areas.heading":"Sirviendo con Orgullo a Miami y Cape Coral",
+    "areas.body":"Los Rosales opera dos sucursales para responder rápidamente en todo el sur de la Florida — una en Miami y otra en Cape Coral. Si no está seguro de si cubrimos su área, simplemente llámenos — con gusto lo confirmamos.",
+    "areas.miami.title":"Miami, FL",
+    "areas.miami.body":"Sucursal de servicio completo que cubre comunidades, hogares y propiedades comerciales de Miami-Dade.",
+    "areas.cape.title":"Cape Coral, FL",
+    "areas.cape.body":"Segunda sucursal que sirve a propietarios, negocios y comunidades HOA de Cape Coral.",
+    "about.eyebrow":"Por Qué Los Rosales",
+    "about.heading":"Por Qué Administradores de Propiedades y Propietarios Eligen a Los Rosales",
+    "about.body":"Los Rosales es operada directamente por su propietario, Yordani Hernandez Rosales, quien participa personalmente en cada trabajo — no un gerente de cuentas distante manejando cientos de propiedades. Eso significa respuestas más rápidas, responsabilidad directa, y un equipo que realmente conoce su propiedad. Servimos tanto a Miami como a Cape Coral en inglés y español, y respaldamos cada trabajo con nuestra palabra.",
+    "about.fact1.title":"Operado por su Propietario","about.fact1.body":"Usted contacta directamente al propietario — no un centro de llamadas.",
+    "about.fact2.title":"Servicio Bilingüe","about.fact2.body":"Atención fluida en inglés y español, en cada paso.",
+    "about.fact3.title":"Dos Sucursales","about.fact3.body":"Equipos locales tanto en Miami como en Cape Coral.",
+    "gallery.eyebrow":"Nuestro Trabajo","gallery.heading":"Galería",
+    "gallery.caption":"Vea la diferencia usted mismo — fotos reales de antes y después de trabajos recientes en Miami y Cape Coral.",
+    "reviews.eyebrow":"Opiniones de Clientes","reviews.heading":"Lo Que Dicen Nuestros Clientes",
+    "reviews.intro":"Comentarios reales de propietarios, negocios y comunidades con los que hemos trabajado en Miami y Cape Coral.",
+    "reviews.ctaSubtext":"¿Trabajó con nosotros recientemente? Una breve reseña ayuda a que otros propietarios y administradores nos encuentren.",
+    "reviews.cta":"Califíquenos en Google →",
+    "reviews.placeholder":"Marcador de posición — reemplazar con una reseña real",
+    "reviews.card3.quote":"“[Marcador de posición — reemplazar con una cita real una vez que una comunidad/referencia comercial acepte ser presentada.]”",
+    "reviews.card3.who":"[Junta de HOA / Nombre de la Comunidad]",
+    "reviews.card3.meta":"Mantenimiento General · Miami",
+    "contact.eyebrow":"Contáctenos","contact.heading":"Solicite una Cotización Gratis",
+    "contact.body":"Cuéntenos un poco sobre su propiedad y lo que necesita — le responderemos rápidamente con una cotización clara. Sin presión, sin centro de llamadas.",
+    "contact.infoTitle":"Información de Contacto",
+    "contact.areasServed":"Sirviendo a Miami y Cape Coral, FL",
+    "contact.note":"Operado por su propietario y bilingüe — siempre podrá comunicarse con alguien que le ayude, en inglés o español.",
+    "contact.form.name":"Nombre","contact.form.phone":"Teléfono","contact.form.email":"Correo Electrónico",
+    "contact.form.propertyType":"Tipo de Propiedad","contact.form.serviceNeeded":"Servicio Necesitado","contact.form.message":"Mensaje",
+    "contact.form.opt.residential":"Residencial","contact.form.opt.commercial":"Comercial","contact.form.opt.hoa":"HOA / Comunidad",
+    "contact.form.note":"Este formulario abre su aplicación de correo con los detalles completados — reemplácelo con un servicio de formularios conectado (p. ej., Formspree) una vez que el sitio esté alojado.",
+    "contact.form.submit":"Enviar Solicitud →",
+    "footer.blurb":"Mantenimiento, limpieza, jardinería, pintura y lavado a presión bilingüe y operado por su propietario en Miami y Cape Coral, FL.",
+    "footer.linksTitle":"Enlaces Rápidos","footer.contactTitle":"Contacto",
+    "footer.rights":"Todos los derechos reservados.",
+    "footer.credit":"Sitio web v1 — reemplace las fotos de la galería y las reseñas a medida que se recopilen.",
+    "gallery.photoSoon":"Foto próximamente"
+  }
+};
+
+let currentLang = "en";
+
+function applyLang(lang){
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  const dict = translations[lang];
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.getAttribute("data-i18n");
+    if(dict[key] !== undefined){
+      el.innerHTML = dict[key];
+    }
+  });
+  document.getElementById("langToggle").textContent = lang === "en" ? "Español" : "English";
+}
+
+document.getElementById("langToggle").addEventListener("click", () => {
+  applyLang(currentLang === "en" ? "es" : "en");
+});
+
+document.getElementById("navToggle").addEventListener("click", () => {
+  document.getElementById("siteNav").classList.toggle("open");
+});
+document.querySelectorAll("#siteNav a").forEach(a => a.addEventListener("click", () => {
+  document.getElementById("siteNav").classList.remove("open");
+}));
+
+document.getElementById("year").textContent = "2026";
+
+// Gallery placeholders
+const galleryGrid = document.getElementById("galleryGrid");
+for(let i=0;i<6;i++){
+  const tile = document.createElement("div");
+  tile.className = "gallery-tile";
+  tile.innerHTML = '<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 17l-5.5-5.5L9 18"/></svg><span data-i18n="gallery.photoSoon">Photo coming soon</span>';
+  galleryGrid.appendChild(tile);
+}
+
+// Contact form -> mailto
+document.getElementById("quoteForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  const f = new FormData(this);
+  const subject = encodeURIComponent("Quote Request — " + f.get("name"));
+  const body = encodeURIComponent(
+    "Name: " + f.get("name") + "\n" +
+    "Phone: " + f.get("phone") + "\n" +
+    "Email: " + f.get("email") + "\n" +
+    "Property Type: " + f.get("propertyType") + "\n" +
+    "Service Needed: " + f.get("service") + "\n\n" +
+    "Message:\n" + f.get("message")
+  );
+  window.location.href = "mailto:sales@losrosalesservices.com?subject=" + subject + "&body=" + body;
+});
+</script>
+
+</body>
+</html>
