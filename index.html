@@ -459,8 +459,10 @@
         <span data-i18n="careers.fact3.body">Reliable hours serving homes, businesses, and communities close to home.</span>
       </div>
     </div>
-    <div class="cta-row" style="margin-top:28px;">
-      <a href="mailto:info@losrosalesservices.com?subject=Job%20Application%20-%20Los%20Rosales" class="btn btn-primary" data-i18n="careers.cta">Send Us Your Resume →</a>
+    <p style="margin-top:28px;font-size:1rem;">
+      <span data-i18n="careers.emailLabel">Send your resume to</span> <a href="mailto:hr@losrosalesservices.com" style="font-weight:700;">hr@losrosalesservices.com</a>
+    </p>
+    <div class="cta-row" style="margin-top:16px;">
       <a href="tel:+17867284868" class="btn btn-green" data-i18n="careers.call">Call 786-728-4868</a>
     </div>
   </div>
@@ -635,7 +637,7 @@ const translations = {
     "careers.fact2.body":"You're not just an employee — you're part of the Los Rosales family from day one.",
     "careers.fact3.title":"Steady, Local Work",
     "careers.fact3.body":"Reliable hours serving homes, businesses, and communities close to home.",
-    "careers.cta":"Send Us Your Resume →",
+    "careers.emailLabel":"Send your resume to",
     "careers.call":"Call 786-728-4868",
     "contact.eyebrow":"Get In Touch","contact.heading":"Get a Free Quote",
     "contact.body":"Tell us a little about your property and what you need — we'll get back to you quickly with a straightforward quote. No pressure, no call center.",
@@ -706,7 +708,7 @@ const translations = {
     "careers.fact2.body":"No eres solo un empleado — eres parte de la familia Los Rosales desde el primer día.",
     "careers.fact3.title":"Trabajo Estable y Local",
     "careers.fact3.body":"Horario confiable sirviendo a hogares, negocios y comunidades cerca de casa.",
-    "careers.cta":"Envíanos Tu Currículum →",
+    "careers.emailLabel":"Envía tu currículum a",
     "careers.call":"Llama al 786-728-4868",
     "contact.eyebrow":"Contáctenos","contact.heading":"Solicite una Cotización Gratis",
     "contact.body":"Cuéntenos un poco sobre su propiedad y lo que necesita — le responderemos rápidamente con una cotización clara. Sin presión, sin centro de llamadas.",
@@ -738,6 +740,12 @@ function applyLang(lang){
     const key = el.getAttribute("data-i18n");
     if(dict[key] !== undefined){
       el.innerHTML = dict[key];
+    }
+  });
+  document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+    const key = el.getAttribute("data-i18n-placeholder");
+    if(dict[key] !== undefined){
+      el.setAttribute("placeholder", dict[key]);
     }
   });
   document.getElementById("langToggle").textContent = lang === "en" ? "Español" : "English";
