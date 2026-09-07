@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://losrosalesservices.com/sitemap.xml
